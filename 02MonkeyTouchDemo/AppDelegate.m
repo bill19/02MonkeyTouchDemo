@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    RootViewController * rvc = [[RootViewController alloc]init];
+    rvc.title = @"02MonkeyTouchDemo";
+    UINavigationController * nvc = [[UINavigationController alloc]initWithRootViewController:rvc];
+    self.window.backgroundColor = [UIColor grayColor];
+    nvc.navigationBar.translucent = NO;
+    self.window.rootViewController = nvc;
+    
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
